@@ -1,16 +1,8 @@
 const app = new Vue({
     el: '#app',
-    mounted() {
-        var url = '/ajax/comedian';
-        axios.get(url).then(function(response){
-            var comedians = response.data;
-            console.log(comedians);
-        });
-    },    
     data: {
         radio: '',
         text: '',
-dentaku: {},
         isTextTyping: false,
         isRadioSelecting: false,
 

@@ -3,25 +3,11 @@
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>電卓テスト</title>
-<meta name="csrf-token" content="{{ csrf_token() }}">
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.0/index.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
- 
-</head>
+ </head>
+
 
 <body>
-<div id="appc">
-    ラジオボタン<br/>
-    <input type="radio" value="1" v-model="radio" @click="isRadioSelecting = true">選択肢1<br/>
-    <input type="radio" value="2" v-model="radio" @click="isRadioSelecting = true">選択肢2<br/>
-    <input type="radio" value="3" v-model="radio" @click="isRadioSelecting = true">選択肢3<br/>
-    <br/>
-    テキスト入力<br/>
-    <input type="text" v-model="text" @input="isTextTyping = true" placeholder="内容を入力">
-    <br/>
-</div>
 
 
  <div id="app12">
@@ -143,12 +129,10 @@ function calc(cmd){
     }
 }
 </script>
-<button id="addButton"class="btn btn-success"v-on:click="add">追加</button>
+
+<input type="radio" value="1" v-model="radio">保存<br/>
 
         <table id="appdentaku">
-
-
-
             <tr>
                 <td colspan="3"><input type="text" v-model="output"></td>
                 <td><button value="C" v-on:click="calc('C')">C</button></td>
@@ -188,38 +172,17 @@ function calc(cmd){
             }
         }
     }
-
 })
-
-
 </script>
 
 
 
 <div id="app">
-            <table></table>
-     </div>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-        
-<script>
-
-           new Vue({
-                el: '#app',
-                data: {
-                    dentaku: {}
-                },
-                mounted() {
-                    var self = this;
-                    var url = '/ajax/dentaku';
-                    axios.get(url).then(function(response){
-                        self.dentaku = response.data;
-                    });
-                }
-            });
+ <dentakutest-component></dentakutest-component>
+ </div>
 
 
-</script>
+
 <router-view></router-view>
 
 

@@ -14,13 +14,36 @@
       <input type="submit" name="計算">
     </form>
 
-<div id="app">
- <hello-component></hello-component>
-</div>
 
+    <tr v-for="(task, index) in allTasks" v-bind:key="task.id">
+  <td>
+    <div v-if="!isEditing[index]">
+      <span>@{{ task.body }}</span>
+    </div>
+    <form v-if="isEditing[index]" @submit.prevent="editTask(index, task)">
+      <input type="text" :value="task.body" :ref="task.id"> //ここを変更
+      <div>
+        <button type="submit">保存</button>
+        <button type="button" @click="isEditing[index] = false">キャンセル</button>
+      </div>
+    </form>
+  <td>  
+</tr>
 
-<script src="{{ '/js/template.js' }}"></script>
 
 
   </body>
 </html>
+
+<script src=" {{ asset('js/app.js') }} "></script>
+<script>
+export default {
+  methods: {
+    async editTask(key, task) {
+      task.body = this.$refs[task.id][0].value
+      await this.$store.dispatch('task/edit', task)
+      this.$set(this.isEditing, key, false)
+    },
+  }
+}
+</script>
