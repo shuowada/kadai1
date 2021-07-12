@@ -22,7 +22,8 @@ Route::get('ajax/dentaku', 'Ajax\dentakuController@index');
 Route::get('/sample', function () {
     return view('sample');
 });
-
+Route::get('dentakutestresult', 'denController@post');
+Route::post('dentakutestresult', 'denController@create');
 Route::get('dentaku', 'ddentakuController@index');
 
 Route::get('/postal-code/{postal-code}/address', 'dentakuController@getAddressByPostalCode'); 

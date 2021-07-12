@@ -143,14 +143,18 @@ function calc(cmd){
     }
 }
 </script>
-<button id="addButton"class="btn btn-success"v-on:click="add">追加</button>
 
+<form method="POST" action="dentakutestresult">
+<button id="addButton"class="btn btn-success"v-on:click="output">追加</button>
+<button value="resu" v-on:click="output">hozon</button>
+</form>
+ 
         <table id="appdentaku">
 
+<td colspan="6"><input type="text" name="totyu" v-model="name"></td>
+ <tr>
+                <td colspan="3"><input type="text" name="result" v-model="output"></td>
 
-
-            <tr>
-                <td colspan="3"><input type="text" v-model="output"></td>
                 <td><button value="C" v-on:click="calc('C')">C</button></td>
             </tr>
             <tr v-for="row in items">
@@ -160,13 +164,18 @@ function calc(cmd){
             </tr>
         </table>
 
-
-
+    <h1>HelloWorld!</h1>
+    <a>@{{$value}}</a>
+    <h1>echo $arr[0] </h1>
+    <h2>$arr[1]</h2>
+    <h3>$arr[2]</h3>
+  
 
 <script>
  var app = new Vue({ 
     el: '#appdentaku',
-    data: {
+    data: { 
+        name:"h",
         output: '0',
         items: [
             ['7', '8', '9', '/'],
@@ -178,17 +187,20 @@ function calc(cmd){
     methods: {
         calc: function (cmd) {
             if(cmd === '='){
-                this.output = eval(this.output)
+                this.output = eval(this.output)	
             }else if(cmd === 'C'){
                 this.output = '0'
+                this.name = '0'
             }else if(this.output === '0') {
                 this.output = cmd
+                this.name = cmd
             }else{
                 this.output += cmd
-            }
+                this.name +=cmd 
+              }
         }
-    }
-
+     
+}
 })
 
 
@@ -220,6 +232,8 @@ function calc(cmd){
 
 
 </script>
+
+
 <router-view></router-view>
 
 

@@ -15,8 +15,8 @@ class CreateDentakuTable extends Migration
     {
         Schema::create('dentaku', function (Blueprint $table) {
 	$table->bigIncrements('id');
-$table->string('dentaku');
-            $table->id();
+            $table->string('siki');
+$table->string('goukei');
             $table->timestamps();
         });
     }
