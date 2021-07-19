@@ -8,22 +8,29 @@
     <title>Document</title>
 </head>
 <body>
+ 
     <table>
-        <tr><th>id</th><th>siki</th><th>goukei</th></tr>
+        <tr><th>siki</th><th>goukei</th></tr>
+
         @foreach ($items as $item)
             <tr>
-                 <td>{{$item->id}}</td>
+                <td>{{$item->id}}</td>
                 <td>{{$item->siki}}</td>
                 <td>{{$item->goukei}}</td>
+            
             </tr>
-
         @endforeach
     </table>
 
 
-
         <table id="appdentaku">
+<form method="post" action="add">
+{{ csrf_filed() }}
+<button value="totyu" v-on:click="totyu">totyuusikihozon</button>
+<td colspan="12"><input type="submit" name="totyu" v-model="name" value="send"></td>
+<button value="result" v-on:click="result">goukeihozon</button>
 
+</form>
 <td colspan="6"><input type="text" name="totyu" v-model="name"></td>
  <tr>
 
@@ -37,7 +44,9 @@
                 </td>
             </tr>
         </table>
+//<form action="/hello" mthod="post">
 
+//<form>
 <script>
  var app = new Vue({ 
     el: '#appdentaku',

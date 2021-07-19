@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
+<table>
         <tr><th>id</th><th>siki</th><th>goukei</th></tr>
         @foreach ($items as $item)
             <tr>
@@ -20,9 +21,15 @@
         @endforeach
     </table>
 
-
-
-        <table id="appdentaku">
+ <table id="appdentaku">
+<form action="/denn/del"　method="post">
+{{ csrf_field()}}
+<td colspan="6"><input type="hidden" name="id"  value="{{$form->id}}"></td>
+<td colspan="6"><input type="text" name="totyu" v-model="name" value="{{$form->totyu}}"></td>
+<td colspan="6"><input type="text" name="result" v-model="output" value="{{$form->result}}"></td>
+goukei:{{$form->result}}
+<td colspan="6"><input type="submit"  value="send"></td>
+</form>
 
 <td colspan="6"><input type="text" name="totyu" v-model="name"></td>
  <tr>

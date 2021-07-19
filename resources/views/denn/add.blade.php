@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,21 +9,16 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <tr><th>id</th><th>siki</th><th>goukei</th></tr>
-        @foreach ($items as $item)
-            <tr>
-                 <td>{{$item->id}}</td>
-                <td>{{$item->siki}}</td>
-                <td>{{$item->goukei}}</td>
-            </tr>
+ <table id="appdentaku">
+<form action="/denn/add"　method="post">
+{{ csrf_field()}}
+goukei: <input type="text" name="result">
+<td colspan="6"><input type="button" name="id"></td>
+<td colspan="6"><input type="button" name="totyu" v-model="name" value="totyusend"></td>
+<td colspan="6"><input type="text" name="result" v-model="output"></td>
 
-        @endforeach
-    </table>
-
-
-
-        <table id="appdentaku">
+<input type="submit"  value="send">
+</form>
 
 <td colspan="6"><input type="text" name="totyu" v-model="name"></td>
  <tr>

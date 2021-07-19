@@ -17,25 +17,51 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('dentaku4', 'denController@index');
-Route::get('ajax/dentaku', 'Ajax\dentakuController@index');
-Route::get('/sample', function () {
-    return view('sample');
-});
-Route::get('dentakutestresult', 'denController@post');
-Route::post('dentakutestresult', 'denController@create');
-Route::get('dentaku', 'ddentakuController@index');
+Route::get('den', 'denController@indox');
+Route::get('denn/den', 'denController@indox');
 
-Route::get('/postal-code/{postal-code}/address', 'dentakuController@getAddressByPostalCode'); 
+//Route::post('den', 'denController@post');
+
+Route::get('denn/edit','denController@edit');
+Route::post('denn/edit','denController@update');
+
+Route::get('denn/del','denController@del');
+Route::post('denn/del','denController@remove');
+
+
+Route::get('denn/add','denController@add');
+Route::post('denn/add','denController@create');
+
+Route::get('denn.add','denController@add');
+Route::post('denn.add','denController@create');
+
+
+
+
+
+
+//Route::get('a', 'denController@index');
+
+
+
+
+
+//Route::get('b', 'dentakuTestController@inputDentakutest');
+//Route::get('ajax/dentaku', 'Ajax\dentakuController@index');
+//Route::get('dentakutestresult', 'denController@post');
+//Route::post('dentakutestresult', 'denController@create');
+//Route::get('dentaku', 'ddentakuController@index');
+
+//Route::get('/postal-code/{postal-code}/address', 'dentakuController@getAddressByPostalCode'); 
 
 Route::resource('users', 'UsersController');
-Route::post('users/{id}', 'UsersController@destroy');
+//Route::post('users/{id}', 'UsersController@destroy');
 
-Auth::routes();
+//Auth::routes();
 
-Route::group(["middleware"=>"auth"],function(){
-    Route::get('/todo',TodoController::class . "@index");
-});
+///Route::group(["middleware"=>"auth"],function(){
+ //   Route::get('/todo',TodoController::class . "@index");
+//});
 
 // 入力画面
 //Route::get('/dentakutest', function () {

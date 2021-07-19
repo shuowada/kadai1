@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDentakuTable extends Migration
+class CreateKeisansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateDentakuTable extends Migration
      */
     public function up()
     {
-        Schema::create('dentaku', function (Blueprint $table) {
-	$table->bigIncrements('id');
-            $table->string('siki');
-$table->string('goukei');
+        Schema::create('keisans', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ $table->string('goukei');
      */
     public function down()
     {
-        Schema::dropIfExists('dentaku');
+        Schema::dropIfExists('keisans');
     }
 }
