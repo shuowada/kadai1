@@ -13,12 +13,16 @@ use vendor\laravel\framework\src\Illuminate\Routing;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+ //   return view('welcome');
+//});
 
 Route::get('den', 'denController@indox');
 Route::get('denn/den', 'denController@indox');
+
+Route::get('denn/add','denController@add');
+Route::post('denn/add','denController@create');
+
 
 //Route::post('den', 'denController@post');
 
@@ -29,8 +33,6 @@ Route::get('denn/del','denController@del');
 Route::post('denn/del','denController@remove');
 
 
-Route::get('denn/add','denController@add');
-Route::post('denn/add','denController@create');
 
 Route::get('denn.add','denController@add');
 Route::post('denn.add','denController@create');
@@ -54,7 +56,7 @@ Route::post('denn.add','denController@create');
 
 //Route::get('/postal-code/{postal-code}/address', 'dentakuController@getAddressByPostalCode'); 
 
-Route::resource('users', 'UsersController');
+//Route::resource('users', 'UsersController');
 //Route::post('users/{id}', 'UsersController@destroy');
 
 //Auth::routes();
@@ -73,18 +75,18 @@ Route::resource('users', 'UsersController');
 
 
 
-Route::get('inputForm', 'postTestController@inputForm'); // 入力フォーム画面(inputForm)のURL割当、起動コントローラ・関数指定
-Route::post('formPost', 'postTestController@formPost');//結果画面(resultPage)のURL割当、起動コントローラ・関数指定
+//Route::get('inputForm', 'postTestController@inputForm'); // 入力フォーム画面(inputForm)のURL割当、起動コントローラ・関数指定
+//Route::post('formPost', 'postTestController@formPost');//結果画面(resultPage)のURL割当、起動コントローラ・関数指定
 
 
 //Route::get('dentakutest', 'postTestdentakuController@dentakutest'); // 入力フォーム画面(inputForm)のURL割当、起動コントローラ・関数指定
 //Route::post('formPost', 'postTestdentakuController@formPost');
 
-Route::post('/post', 'PostsController@store');
+//Route::post('/post', 'PostsController@store');
 
-Route::get('inputDentakutest', 'dentakuTestController@inputDentakutest'); // 入力フォーム画面(inputForm)のURL割当、起動コントローラ・関数指定
-Route::post('dentakutestresult', 'dentakuTestController@dentakutestresult');
+//Route::get('inputDentakutest', 'dentakuTestController@inputDentakutest'); // 入力フォーム画面(inputForm)のURL割当、起動コントローラ・関数指定
+///Route::post('dentakutestresult', 'dentakuTestController@dentakutestresult');
 
 
-Route::post('/saveData', 'UserInputController@saveData');
-Route::post('/loadData', 'UserInputController@loadData');
+//Route::post('/saveData', 'UserInputController@saveData');
+//Route::post('/loadData', 'UserInputController@loadData');

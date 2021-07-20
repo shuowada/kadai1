@@ -12,18 +12,17 @@
  <table id="appdentaku">
 <form action="/denn/add"　method="post">
 {{ csrf_field()}}
-goukei: <input type="text" name="result">
-<td colspan="6"><input type="button" name="id"></td>
-<td colspan="6"><input type="button" name="totyu" v-model="name" value="totyusend"></td>
-<td colspan="6"><input type="text" name="result" v-model="output"></td>
+goukei: <input type="text" name=goukei">
+<td colspan="6"><input type="text" name="id"></td>
+<td colspan="5"><input type="text" name="siki" v-model="name"></td>
+<td colspan="4"><input type="text" name="goukei" v-model="output"></td>
 
 <input type="submit"  value="send">
 </form>
 
-<td colspan="6"><input type="text" name="totyu" v-model="name"></td>
+<td colspan="2"><input type="text" name="totyu" v-model="name"></td>
  <tr>
-
-                <td colspan="3"><input type="text" name="result" v-model="output"></td>
+<td colspan="3"><input type="text" name="result" v-model="output"></td>
 
                 <td><button value="C" v-on:click="calc('C')">C</button></td>
             </tr>

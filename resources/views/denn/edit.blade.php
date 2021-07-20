@@ -24,7 +24,7 @@
  <table id="appdentaku">
 <form action="/denn/edit"　method="post">
 {{ csrf_field()}}
-<td colspan="6"><input type="hidden" name="id"  value="{{$form->id}}"></td>
+<input type="hidden" name="id"  value="{{$form->id}}">
 <td colspan="6"><input type="text" name="totyu" v-model="name" value="{{$form->totyu}}"></td>
 <td colspan="6"><input type="text" name="result" v-model="output" value="{{$form->result}}"></td>
 <td colspan="6"><input type="submit"  value="send"></td>
